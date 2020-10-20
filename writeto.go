@@ -241,9 +241,9 @@ func (w *messageWriter) writeLine(s string, charsLeft int) string {
 func (w *messageWriter) writeHeaders(h map[string][]string) {
 	if w.depth == 0 {
 		for k, v := range h {
-			if k != "Bcc" {
-				w.writeHeader(k, v...)
-			}
+			//if k != "Bcc" {
+			w.writeHeader(k, v...)
+			//}
 		}
 	} else {
 		w.createPart(h)
